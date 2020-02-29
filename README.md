@@ -40,7 +40,10 @@ Create FullStack App using Django for backend and Reactjs for backend
    * python manage.py startapp frontend 
 
    * [x] Install webpack and webpack-cli
-   * [ ] Install babel
+   * [x] Install babel
+   * [x] Install react
+   * [x] Create config babel file
+   * [x] Create webpack config file
 
 ## Submitions
 
@@ -49,3 +52,10 @@ Create FullStack App using Django for backend and Reactjs for backend
 ## Screnn Shoots
 
 ## Tech I Used
+
+* Django
+* django-rest-framework
+* django-rest-knox
+* webpack
+* babel
+* reactjs
