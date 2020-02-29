@@ -32,7 +32,15 @@ Create FullStack App using Django for backend and Reactjs for backend
        * DELETE lead
 * [x] Create Urls
     * urls.py
+* [ ] Test App
+
 ## Front End: Reactjs
+
+* [ ] setup project
+   * python manage.py startapp frontend 
+
+   * [x] Install webpack and webpack-cli
+   * [ ] Install babel
 
 ## Submitions
 

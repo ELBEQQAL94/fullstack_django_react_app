@@ -1,0 +1,13 @@
+{
+  "name": "fullstack_django_react_app",
+  "version": "1.0.0",
+  "description": "reactjs app",
+  "main": "index.js",
+  "repository": "https://github.com/ELBEQQAL94/fullstack_django_react_app.git",
+  "author": "ELBEQQAL94 <ELBEQQAL.youssef@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}
