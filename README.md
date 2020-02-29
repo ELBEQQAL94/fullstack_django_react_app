@@ -11,8 +11,9 @@ Create FullStack App using Django for backend and Reactjs for backend
 * [x] Install django
 * [x] Install djangorestframework for web API
 * [x] Install django-rest-knox for auth
-* [ ] Setup django project
-* [ ] Create django app 
+* [x] Setup django project
+* [x] Create django app 
+* [x] Add app into settings.py
 
 ## Front End: Reactjs
 
