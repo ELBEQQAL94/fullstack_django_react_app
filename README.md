@@ -14,7 +14,14 @@ Create FullStack App using Django for backend and Reactjs for backend
 * [x] Setup django project
 * [x] Create django app 
 * [x] Add app into settings.py
-
+* [x] Create model
+    * name
+    * email
+    * message
+* [x] Make migration to the app
+    * python manage.py makemigrations leads
+* [ ] Add model to database
+    * python manage.py migrate
 ## Front End: Reactjs
 
 ## Submitions
