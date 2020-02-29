@@ -36,14 +36,25 @@ Create FullStack App using Django for backend and Reactjs for backend
 
 ## Front End: Reactjs
 
-* [ ] setup project
-   * python manage.py startapp frontend 
-
-   * [x] Install webpack and webpack-cli
-   * [x] Install babel
-   * [x] Install react
-   * [x] Create config babel file
-   * [x] Create webpack config file
+* [x] setup project
+    * python manage.py startapp frontend 
+* [x] Install webpack and webpack-cli
+* [x] Install babel
+* [x] Install react
+* [x] Create config babel file
+* [x] Create webpack config file
+* [x] Add scripts:
+    * dev
+    * build
+* [x] Create index.js
+* [x] Create App.js 
+* [x] Create index.html
+* [x] Add bootstrap
+* [x] Add frontend app to settings.py
+* [x] Add our index to views.py
+* [x] Add urls
+* [ ] Add urls into main file (leadmanager)
+* [ ] Setup eslint
 
 ## Submitions
 
