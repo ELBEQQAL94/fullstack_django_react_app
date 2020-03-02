@@ -7,11 +7,11 @@ This app it's a dashboard for create, update, delete, get all leaders.
 
 ## run front end
 
-'''sh
+```sh
 yarn dev
 yarn build
 
-'''
+```
 
 ## run server
 
