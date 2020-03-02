@@ -58,10 +58,27 @@ header {
   font-weight: 400;
 }
 
+.delete-icon {
+  cursor: pointer;
+}
+
+.edit-icon {
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.edit-icon:hover {
+  color: black;
+}
+
 @media (max-width: 360px) {
   .blockquote-footer {
     width: 100%;
     font-size: 2vw;
     font-weight: bold;
+  }
+
+  .no-wrap {
+    flex-wrap: nowrap !important;
   }
 }

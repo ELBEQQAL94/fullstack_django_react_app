@@ -43,6 +43,7 @@ python manage.py runserver
   - time of work
   - role: user or admin
   - email
+  - avatar
 - [x] Make migration to the app
   - python manage.py makemigrations leads
 - [x] Add model to database
@@ -88,16 +89,18 @@ python manage.py runserver
 
 * [x] Create store
   - Leads
-* [ ] Create types for actions and reducers
-  - GET_LEADS
-  - DELETE_LEADS
-  - ADD_LEAD
+* [x] Create types for actions and reducers
+  - [x] GET_LEADS
+  - [x] DELETE_LEADS
+  - [x] ADD_LEAD
+  - [x] UPDATE_LEAD
 * [x] Create reducers
   - LeadsReducer
 * [ ] Create actions
-  - GET LEADS
-  - DELETE LEADS
-  - ADD LEAD
+  - [x] GET LEADS
+  - [x] DELETE LEADS
+  - [ ] ADD LEAD
+  - [ ] UPDATE LEAD
 * [x] Add loader css in webpack config file
 * [ ] Add editor for create message
 * [ ] Add search leads form

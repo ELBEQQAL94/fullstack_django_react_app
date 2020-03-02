@@ -7,12 +7,12 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 // actions
-import { getLeads } from "../../actions/leads";
+import { getLeads, deleteLead } from "../../redux/actions/leads";
 
 // Components
 import Lead from "./Lead";
 
-const Leads = ({ getLeads, leads }) => {
+const Leads = ({ getLeads, leads, deleteLead }) => {
   useEffect(() => getLeads(), []);
   return (
     <section className="leads">
@@ -20,15 +20,21 @@ const Leads = ({ getLeads, leads }) => {
         <h1>Leads List</h1>
         <hr />
         <div className="row">
-          {leads.map(lead => (
-            <Lead
-              key={lead.id}
-              name={lead.name}
-              email={lead.email}
-              message={lead.message}
-              createdAt={lead.created_at}
-            />
-          ))}
+          {leads.length === 0 ? (
+            <p className="lead">You have No Leads.</p>
+          ) : (
+            leads.map(lead => (
+              <Lead
+                key={lead.id}
+                delLead={deleteLead}
+                id={lead.id}
+                name={lead.name}
+                email={lead.email}
+                message={lead.message}
+                createdAt={lead.created_at}
+              />
+            ))
+          )}
         </div>
       </div>
     </section>
@@ -43,4 +49,4 @@ Leads.propTypes = {
   leads: PropTypes.array.isRequired
 };
 
-export default connect(mapStateToProps, { getLeads })(Leads);
+export default connect(mapStateToProps, { getLeads, deleteLead })(Leads);
