@@ -101,6 +101,14 @@ python manage.py runserver
   - [x] DELETE LEADS
   - [ ] ADD LEAD
   - [ ] UPDATE LEAD
+* [ ] Allow Manager to add lead
+  - [x] Install react-hook-form for validation
+  - [ ] Create Form
+* [x] Add react-router-dom
+  - [x] Install react-router-dom
+  - [x] Add Routers component
+  - [x] Add Custom Link
+* [x] Add Not Found Page
 * [x] Add loader css in webpack config file
 * [ ] Add editor for create message
 * [ ] Add search leads form

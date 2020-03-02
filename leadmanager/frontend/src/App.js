@@ -2,16 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import Header from "./components/layout/Header";
-import Leads from "./components/leads/Leads";
+
+// Routers Component
+import Routers from "./Routers";
+
 import "./styles/style.css";
 
-const App = () => (
-  <>
-    <Header />
-    <Leads />
-  </>
-);
+const App = () => <Routers />;
 
 ReactDOM.render(
   <Provider store={store}>

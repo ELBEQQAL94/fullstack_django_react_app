@@ -1,12 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+// Component
+import CustomLink from "./CustomLink";
 
 const Header = () => (
   <header>
     <div className="container">
       <nav className="navbar navbar-expand-lg navbar-light">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" href="/">
           Leads Managers
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -19,11 +23,12 @@ const Header = () => (
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">
-                Home <span className="sr-only">(current)</span>
-              </a>
+          <ul className="navbar-nav float-right">
+            <li className="nav-item">
+              <CustomLink activeOnlyWhenExact to="/" label="Home" />
+            </li>
+            <li className="nav-item">
+              <CustomLink to="/add-lead" label="Add Lead" />
             </li>
           </ul>
         </div>

@@ -18,6 +18,12 @@ header {
   padding: 5vmin;
 }
 
+/* ACTIVE LINK */
+.active {
+  padding: 1vmin;
+  border: 1px dashed #ffffff;
+}
+
 /* BRAND */
 .navbar-brand {
   font-size: 4vmin;
