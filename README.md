@@ -3,6 +3,25 @@
 Create FullStack App using Django for backend and Reactjs for backend
 This app it's a dashboard for create, update, delete, get all leaders.
 
+### Setup Project
+
+## run front end
+
+'''sh
+yarn dev
+yarn build
+
+'''
+
+## run server
+
+- ./ leadmanger
+
+'''sh
+pipenv shell
+python manage.py runserver
+'''
+
 ### TODO:
 
 ## Back End: Django
@@ -38,6 +57,7 @@ This app it's a dashboard for create, update, delete, get all leaders.
     - DELETE lead
 - [x] Create Urls
   - urls.py
+- [ ] Emigrate DataBase from sqlite3 to MySQL
 - [ ] Test App
 
 ## Front End: Reactjs
