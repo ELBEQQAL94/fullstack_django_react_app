@@ -17,10 +17,10 @@ yarn build
 
 - ./ leadmanger
 
-'''sh
+```sh
 pipenv shell
 python manage.py runserver
-'''
+```
 
 ### TODO:
 
