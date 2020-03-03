@@ -8,7 +8,7 @@ const Header = () => (
   <header>
     <div className="container">
       <nav className="navbar navbar-expand-lg navbar-light">
-        <Link className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           Leads Managers
         </Link>
         <button
@@ -22,10 +22,13 @@ const Header = () => (
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav float-right">
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul className="navbar-nav">
             <li className="nav-item">
-              <CustomLink activeOnlyWhenExact to="/" label="Home" />
+              <CustomLink activeOnlyWhenExact to="/" label="Leads" />
             </li>
             <li className="nav-item">
               <CustomLink to="/add-lead" label="Add Lead" />

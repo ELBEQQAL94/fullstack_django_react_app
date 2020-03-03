@@ -14,7 +14,7 @@ export default function(state = initialState, action) {
     case ADD_LEAD:
       return {
         ...state,
-        leads: action.payload
+        leads: [...state.leads, action.payload]
       };
     case DELETE_LEAD:
       return {

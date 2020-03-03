@@ -103,7 +103,13 @@ python manage.py runserver
   - [ ] UPDATE LEAD
 * [ ] Allow Manager to add lead
   - [x] Install react-hook-form for validation
-  - [ ] Create Form
+  - [x] Create Form
+    - [x] validate name
+      - [x] display error if name is emprty or not valid or the length is longer
+    - [ ] validate email
+      - [ ] display error if name is emprty or not valid or the length is longer
+    - [x] message (optional)
+      - User can leave message empty if he/here wants
 * [x] Add react-router-dom
   - [x] Install react-router-dom
   - [x] Add Routers component

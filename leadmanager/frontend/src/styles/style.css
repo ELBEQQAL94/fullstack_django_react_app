@@ -12,16 +12,31 @@ body {
   margin: 0;
 }
 
+a {
+  color: #ffffff;
+  text-decoration: none !important;
+  transition: 0.5s all linear;
+}
+
+a:hover {
+  color: #948c8c;
+}
+
 /* HEADER */
 header {
   background: rgb(224, 67, 19);
   padding: 5vmin;
 }
 
+.nav-item {
+  margin-left: 10px;
+  font-size: 4vmin;
+}
+
 /* ACTIVE LINK */
 .active {
-  padding: 1vmin;
-  border: 1px dashed #ffffff;
+  color: aqua;
+  border-bottom: 2px solid aqua;
 }
 
 /* BRAND */
@@ -75,6 +90,15 @@ header {
 
 .edit-icon:hover {
   color: black;
+}
+
+/* ADD LEAD */
+.add-lead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 97vw;
+  height: 100vh;
 }
 
 @media (max-width: 360px) {

@@ -68,7 +68,9 @@ const Lead = ({ name, message, email, createdAt, id, delLead }) => (
             </div>
           </div>
           <h6 className="card-subtitle mb-2 text-muted">{email}</h6>
-          <p className="card-text lead">{message}</p>
+          <p className="card-text lead">
+            {message.length === 0 ? "No Message" : message}
+          </p>
           <blockquote className="blockquote mb-0">
             <footer className="blockquote-footer text-nowrap">
               <cite title="Source Title">

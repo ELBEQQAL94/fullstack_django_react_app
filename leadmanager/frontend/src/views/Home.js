@@ -1,5 +1,12 @@
 import React from "react";
+import Leads from "../components/leads/Leads";
 
-const Home = () => <h1>Welcome Home!</h1>;
+const Home = () => (
+  <section className="home">
+    <div className="container">
+      <Leads />
+    </div>
+  </section>
+);
 
 export default Home;
