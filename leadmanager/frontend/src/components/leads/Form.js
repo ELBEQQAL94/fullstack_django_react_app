@@ -14,7 +14,7 @@ const Form = ({ addLead }) => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
     addLead(data);
-    //reset();
+    reset();
   };
   return (
     <form className="needs-validation" onSubmit={handleSubmit(onSubmit)}>

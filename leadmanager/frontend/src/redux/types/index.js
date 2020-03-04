@@ -6,3 +6,6 @@ export const UPDATE_LEAD = "UPDATE_LEAD";
 
 // ERRORS
 export const GET_ERRORS = "GET_ERRORS";
+
+// MESSAGES
+export const CREATE_MESSAGE = "CREATE_MESSAGE";

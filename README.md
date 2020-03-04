@@ -99,17 +99,21 @@ python manage.py runserver
 * [ ] Create actions
   - [x] GET LEADS
   - [x] DELETE LEADS
-  - [ ] ADD LEAD
+  - [x] ADD LEAD
   - [ ] UPDATE LEAD
 * [ ] Allow Manager to add lead
   - [x] Install react-hook-form for validation
   - [x] Create Form
     - [x] validate name
       - [x] display error if name is emprty or not valid or the length is longer
-    - [ ] validate email
-      - [ ] display error if name is emprty or not valid or the length is longer
+    - [x] validate email
+      - [x] display error if name is emprty or not valid or the length is longer
     - [x] message (optional)
       - User can leave message empty if he/here wants
+* [x] Create message components for tell user if delete lead or add lead
+  - [x] Add type with CREATE_MESSAGE
+  - [x] Create messages reducer
+  - [x] Create action for create message
 * [x] Add react-router-dom
   - [x] Install react-router-dom
   - [x] Add Routers component
