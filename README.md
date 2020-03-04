@@ -69,6 +69,13 @@ python manage.py runserver
 - [x] Create migration for updated our model
   - python manage.py makemigrations
   - python manage.py migrate
+- [x] Add knox and REST_FRAMEWORK in settings.py file
+- [x] Migrate Authentication
+  - python manage.py migrate
+- [x] Create accounts app for manage users
+  - python manage.py startapp accounst
+- [x] Add accounts app to seetings.py
+- [x] Create Serializer inside accounts app
 - [ ] REGISTER USER
   - [ ] Validate name
     - [ ] if name is empty or not valid display errors
