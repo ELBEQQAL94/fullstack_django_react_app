@@ -24,7 +24,9 @@ python manage.py runserver
 
 ### TODO:
 
-## Back End: Django
+### Back End: Django
+
+## Setup Server
 
 - [x] Install pipenv
 - [x] Create virtuall env
@@ -61,7 +63,39 @@ python manage.py runserver
 - [ ] Emigrate DataBase from sqlite3 to MySQL
 - [ ] Test App
 
-## Front End: Reactjs
+## Authentication
+
+- [x] Add owner to our Lead model
+- [x] Create migration for updated our model
+  - python manage.py makemigrations
+  - python manage.py migrate
+- [ ] REGISTER USER
+  - [ ] Validate name
+    - [ ] if name is empty or not valid display errors
+  - [ ] Validate email
+    - [ ] if email not unique or not valid display errors
+  - [ ] Validate password
+    - [ ] if password not valid or less than 6 length display errors
+    - [ ] if not hashed password before send it to database
+  - [ ] POST Request to /auth/register for logged user
+- [ ] LOGIN USER
+- [ ] Validate name
+  - [ ] if name is empty or not valid display errors
+  - [ ] Validate email
+    - [ ] if email not correct or not valid display errors
+  - [ ] Validate password
+    - [ ] if password not correct or less than 6 length display errors
+    - [ ] compare password within database
+    - [ ] if something wrong display errors if not
+  - [ ] POST Request to /auth/login for register user
+
+## Permissions
+
+## Authorization
+
+## Administaration
+
+### Front End: Reactjs
 
 - [x] setup project
   - python manage.py startapp frontend
@@ -126,13 +160,15 @@ python manage.py runserver
 
 - [ ] Setup eslint
 
-## Submitions
+### Description Folders and Files Of The Project
 
-## Deployment
+### Submitions
 
-## Screnn Shoots
+### Deployment
 
-## Tech I Used
+### Screnn Shoots
+
+### Tech I Used
 
 - Django
 - django-rest-framework

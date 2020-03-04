@@ -18,7 +18,8 @@ class Alerts extends Component {
     if (error !== prevProps.error) {
       if (error.msg.name) {
         alert.error(`Name: ${error.msg.name[0]}`);
-      } else {
+      }
+      if (error.msg.email) {
         alert.error(`Email: ${error.msg.email[0]}`);
       }
     }
