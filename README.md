@@ -159,6 +159,41 @@ python manage.py runserver
   - [x] Add Custom Link
 * [x] Add Not Found Page
 * [x] Add loader css in webpack config file
+* [x] Create REGISTER Page
+  - [x] Add regsiter in header
+  - [x] Create Form for register user
+    - [x] username Form
+      - [x] validate username and display errors
+    - [x] email Form
+      - [x] validate email and display errors
+    - [x] password Form
+      - [x] validate password and display errors
+    - [x] POST Request for register new USER
+  - [x] Redirect User to Leads view
+* [x] Create LOGIN Page
+  - [x] Add login in header
+  - [x] Create Form for login user
+    - [x] username Form
+      - [x] validate username and display errors
+    - [x] password Form
+      - [x] validate password and display errors
+    - [x] POST Request for register new USER
+  - [x] Redirect User to Leads view
+* [ ] Reducer
+  - [ ] Add user reducer
+* [ ] Actions
+  - [ ] registerUser
+  - [ ] loginUser
+  - [ ] logoutUser
+* [ ] Types
+
+  - REGISTER_ACCOUNT
+  - LOGIN_ACCOUNT
+  - GET_USER_INFO
+  - LOGOUT_ACCOUNT
+
+* [ ] Add public routes for LOGIN and REGISTER USER
+* [ ] Add private routes for Leads and Add Leads
 * [ ] Add editor for create message
 * [ ] Add search leads form
 * [ ] Add seprate component to add, update leader

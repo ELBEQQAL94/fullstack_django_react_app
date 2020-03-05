@@ -33,6 +33,12 @@ const Header = () => (
             <li className="nav-item">
               <CustomLink to="/add-lead" label="Add Lead" />
             </li>
+            <li className="nav-item">
+              <CustomLink to="/register" label="Register" />
+            </li>
+            <li className="nav-item">
+              <CustomLink to="/login" label="Login" />
+            </li>
           </ul>
         </div>
       </nav>

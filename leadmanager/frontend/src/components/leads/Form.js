@@ -46,7 +46,7 @@ const Form = ({ addLead }) => {
         ></textarea>
       </div>
       <button type="submit" className="btn btn-primary">
-        Submit
+        Add Lead
       </button>
     </form>
   );
