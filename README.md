@@ -63,7 +63,7 @@ python manage.py runserver
 - [ ] Emigrate DataBase from sqlite3 to MySQL
 - [ ] Test App
 
-## Authentication
+## Authentication & Authorization
 
 - [x] Add owner to our Lead model
 - [x] Create migration for updated our model
@@ -76,29 +76,27 @@ python manage.py runserver
   - python manage.py startapp accounst
 - [x] Add accounts app to seetings.py
 - [x] Create Serializer inside accounts app
-- [ ] REGISTER USER
-  - [ ] Validate name
-    - [ ] if name is empty or not valid display errors
-  - [ ] Validate email
+- [x] REGISTER USER
+  - [x] Validate name
+    - [x] if name is empty or not valid display errors
+  - [x] Validate email
     - [ ] if email not unique or not valid display errors
-  - [ ] Validate password
-    - [ ] if password not valid or less than 6 length display errors
+  - [x] Validate password
+    - [x] if password not valid or less than 6 length display errors
     - [ ] if not hashed password before send it to database
-  - [ ] POST Request to /auth/register for logged user
-- [ ] LOGIN USER
-- [ ] Validate name
-  - [ ] if name is empty or not valid display errors
-  - [ ] Validate email
-    - [ ] if email not correct or not valid display errors
-  - [ ] Validate password
+  - [x] POST Request to /auth/register for logged user
+- [x] LOGIN USER
+- [x] Validate name
+  - [x] if name is empty or not valid display errors
+  - [x] Validate email
+    - [x] if email not correct or not valid display errors
+  - [x] Validate password
     - [ ] if password not correct or less than 6 length display errors
-    - [ ] compare password within database
-    - [ ] if something wrong display errors if not
-  - [ ] POST Request to /auth/login for register user
+    - [x] compare password within database
+    - [x] if something wrong display errors if not
+  - [x] POST Request to /auth/login for register user
 
 ## Permissions
-
-## Authorization
 
 ## Administaration
 
