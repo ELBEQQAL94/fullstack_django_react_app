@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { isLogin } from "../../helpers";
 
 // Component
 import CustomLink from "./CustomLink";
@@ -27,18 +28,25 @@ const Header = () => (
           id="navbarNav"
         >
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <CustomLink activeOnlyWhenExact to="/" label="Leads" />
-            </li>
-            <li className="nav-item">
-              <CustomLink to="/add-lead" label="Add Lead" />
-            </li>
-            <li className="nav-item">
-              <CustomLink to="/register" label="Register" />
-            </li>
-            <li className="nav-item">
-              <CustomLink to="/login" label="Login" />
-            </li>
+            {!isLogin() ? (
+              <>
+                <li className="nav-item">
+                  <CustomLink to="/register" label="Register" />
+                </li>
+                <li className="nav-item">
+                  <CustomLink to="/login" label="Login" />
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <CustomLink activeOnlyWhenExact to="/" label="Leads" />
+                </li>
+                <li className="nav-item">
+                  <CustomLink to="/add-lead" label="Add Lead" />
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </nav>

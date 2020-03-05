@@ -7,11 +7,11 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 
 // Routers Component
-import Routers from "./Routers";
+import Routes from "./Routes";
 
 import "./styles/style.css";
 
-const App = () => <Routers />;
+const App = () => <Routes />;
 
 ReactDOM.render(
   <Provider store={store}>

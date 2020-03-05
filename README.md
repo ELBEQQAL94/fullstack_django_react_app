@@ -185,16 +185,15 @@ python manage.py runserver
   - [ ] registerUser
   - [ ] loginUser
   - [ ] logoutUser
-* [ ] Types
+* [x] Types
 
   - REGISTER_ACCOUNT
   - LOGIN_ACCOUNT
   - GET_USER_INFO
   - LOGOUT_ACCOUNT
 
-* [ ] Add public routes for LOGIN and REGISTER USER
-* [ ] Add private routes for Leads and Add Leads
-* [ ] Add editor for create message
+* [x] Add public routes for LOGIN and REGISTER USER
+* [x] Add private routes for Leads and Add Leads
 * [ ] Add search leads form
 * [ ] Add seprate component to add, update leader
 
