@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { isLogin } from "../../helpers";
+
+// connect component with redux
+import { connect } from "react-redux";
+
+// prop types
+import PropTypes from "prop-types";
 
 // Component
 import CustomLink from "./CustomLink";
 
-const Header = () => (
+const Header = ({ auth }) => (
   <header>
     <div className="container">
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -28,7 +33,7 @@ const Header = () => (
           id="navbarNav"
         >
           <ul className="navbar-nav">
-            {!isLogin() ? (
+            {!auth.isAuisAuthenticated ? (
               <>
                 <li className="nav-item">
                   <CustomLink to="/register" label="Register" />
@@ -54,4 +59,12 @@ const Header = () => (
   </header>
 );
 
-export default Header;
+Header.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps)(Header);

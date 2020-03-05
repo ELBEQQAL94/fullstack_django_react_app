@@ -191,11 +191,15 @@ python manage.py runserver
   - LOGIN_ACCOUNT
   - GET_USER_INFO
   - LOGOUT_ACCOUNT
+  - USER_LOADING
+  - USER_LOADED
+  - AUTH_ERROR
 
 * [x] Add public routes for LOGIN and REGISTER USER
 * [x] Add private routes for Leads and Add Leads
 * [ ] Add search leads form
 * [ ] Add seprate component to add, update leader
+* [ ] Add .env file for protect server routes
 
 - [ ] Setup eslint
 
