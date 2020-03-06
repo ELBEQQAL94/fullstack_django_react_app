@@ -1,6 +1,12 @@
 import axios from "axios";
 
-import { USER_LOADING, USER_LOADED, AUTH_ERROR } from "../types";
+import {
+  USER_LOADING,
+  USER_LOADED,
+  AUTH_ERROR,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL
+} from "../types";
 import { handleErrors } from "./errors";
 
 // check TOKEN and load USER
@@ -23,8 +29,47 @@ export const loadUser = () => (dispatch, getState) => {
     config.headers["Authorization"] = `Token ${token}`;
   }
 
-  // I'am HERE...
-
   // GET USER info
-  axios.get("api/auth/user", config);
+  axios
+    .get("api/auth/user", config)
+    .then(res => {
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data
+      });
+    })
+    .catch(err => {
+      dispatch(handleErrors(err.response.data, err.response.status));
+      dispatch({
+        type: AUTH_ERROR
+      });
+    });
+};
+
+// LOGIN USER
+export const loginUser = data => dispatch => {
+  // Headers
+  const config = {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  // Body request
+  const body = JSON.stringify(data);
+
+  axios
+    .post("api/auth/login", body, config)
+    .then(res => {
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data
+      });
+    })
+    .catch(err => {
+      dispatch(handleErrors(err.response.data, err.response.status));
+      dispatch({
+        type: LOGIN_FAIL
+      });
+    });
 };

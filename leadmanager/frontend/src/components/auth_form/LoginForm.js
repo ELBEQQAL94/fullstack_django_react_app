@@ -1,21 +1,24 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Redirect } from "react-router-dom";
 
 // prop types
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 // action
-//import { addLead } from "../../redux/actions/leads";
+import { loginUser } from "../../redux/actions/auth";
 
 // connect component with redux
-//import { connect } from "react-redux";
+import { connect } from "react-redux";
 
-const LoginForm = () => {
+const LoginForm = ({ loginUser, isAuthenticated }) => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
-    console.log(data);
-    //reset();
+    loginUser(data);
   };
+
+  if (isAuthenticated) return <Redirect to="/" />;
+
   return (
     <form className="needs-validation" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-group">
@@ -44,9 +47,13 @@ const LoginForm = () => {
   );
 };
 
-// Form.propTypes = {
-//   addLead: PropTypes.func.isRequired
-// };
+LoginForm.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  loginUser: PropTypes.func.isRequired
+};
 
-// export default connect(null, { addLead })(Form);
-export default LoginForm;
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { loginUser })(LoginForm);

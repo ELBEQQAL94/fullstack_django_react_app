@@ -194,6 +194,8 @@ python manage.py runserver
   - USER_LOADING
   - USER_LOADED
   - AUTH_ERROR
+  - LOGIN_SUCCESS
+  - LOGIN_FAIL
 
 * [x] Add public routes for LOGIN and REGISTER USER
 * [x] Add private routes for Leads and Add Leads
