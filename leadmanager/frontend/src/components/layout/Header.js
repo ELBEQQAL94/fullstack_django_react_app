@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 // connect component with redux
 import { connect } from "react-redux";
 
+// actions
+import { logoutUser } from "../../redux/actions/auth";
+
 // prop types
 import PropTypes from "prop-types";
 
 // Component
 import CustomLink from "./CustomLink";
 
-const Header = ({ auth }) => (
+const Header = ({ isAuthenticated, logoutUser }) => (
   <header>
     <div className="container">
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -33,7 +36,7 @@ const Header = ({ auth }) => (
           id="navbarNav"
         >
           <ul className="navbar-nav">
-            {!auth.isAuisAuthenticated ? (
+            {!isAuthenticated ? (
               <>
                 <li className="nav-item">
                   <CustomLink to="/register" label="Register" />
@@ -50,6 +53,14 @@ const Header = ({ auth }) => (
                 <li className="nav-item">
                   <CustomLink to="/add-lead" label="Add Lead" />
                 </li>
+                <li className="nav-item">
+                  <button
+                    onClick={() => logoutUser()}
+                    className="nav-link btn btn-info btn-sm text-light"
+                  >
+                    Log Out
+                  </button>
+                </li>
               </>
             )}
           </ul>
@@ -60,11 +71,12 @@ const Header = ({ auth }) => (
 );
 
 Header.propTypes = {
-  auth: PropTypes.object.isRequired
+  isAuthenticated: PropTypes.bool.isRequired,
+  logoutUser: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, { logoutUser })(Header);

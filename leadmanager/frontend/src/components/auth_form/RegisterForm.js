@@ -1,21 +1,41 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Redirect } from "react-router-dom";
+
+// Components
+import Spinner from "../spinner/Spinner";
 
 // prop types
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
-// action
-//import { addLead } from "../../redux/actions/leads";
+// actions
+import { registerUser } from "../../redux/actions/auth";
+import { createMessage } from "../../redux/actions/messages";
 
 // connect component with redux
-//import { connect } from "react-redux";
+import { connect } from "react-redux";
 
-const RegisterForm = () => {
-  const { register, handleSubmit, reset } = useForm();
+const RegisterForm = ({
+  registerUser,
+  isAuthenticated,
+  isLoading,
+  createMessage
+}) => {
+  const { register, handleSubmit } = useForm();
   const onSubmit = data => {
-    console.log(data);
-    //reset();
+    const { username, email, password } = data;
+
+    if (password !== data.confirm_password) {
+      createMessage({
+        passwordNoMatch: "Should match the passwords!"
+      });
+    } else {
+      registerUser({ username, email, password });
+    }
   };
+
+  if (isAuthenticated) return <Redirect to="/" />;
+
   return (
     <form className="needs-validation" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-group">
@@ -56,15 +76,24 @@ const RegisterForm = () => {
       </div>
 
       <button type="submit" className="btn btn-info btn-block">
-        Register
+        {isLoading ? <Spinner /> : "Register"}
       </button>
     </form>
   );
 };
 
-// Form.propTypes = {
-//   addLead: PropTypes.func.isRequired
-// };
+RegisterForm.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  createMessage: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired
+};
 
-// export default connect(null, { addLead })(Form);
-export default RegisterForm;
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  isLoading: state.auth.isLoading
+});
+
+export default connect(mapStateToProps, { registerUser, createMessage })(
+  RegisterForm
+);

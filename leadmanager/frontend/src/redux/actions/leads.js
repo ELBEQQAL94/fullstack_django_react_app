@@ -1,12 +1,15 @@
 import axios from "axios";
 
+// check Token And Get Response
+import { checkTokenAndResponse } from "../../helpers";
+
 import { createMessage } from "./messages";
 import { handleErrors } from "./errors";
 import { GET_LEADS, ADD_LEAD, DELETE_LEAD, GET_ERRORS } from "../types";
 
-export const getLeads = () => dispatch => {
+export const getLeads = () => (dispatch, getState) => {
   axios
-    .get("/api/leads/")
+    .get("/api/leads/", checkTokenAndResponse(getState))
     .then(res => {
       dispatch({
         type: GET_LEADS,
@@ -18,9 +21,9 @@ export const getLeads = () => dispatch => {
     );
 };
 
-export const addLead = lead => dispatch => {
+export const addLead = lead => (dispatch, getState) => {
   axios
-    .post("/api/leads/", lead)
+    .post("/api/leads/", lead, checkTokenAndResponse(getState))
     .then(res => {
       dispatch(createMessage({ addLead: "Lead added successfully!" }));
       dispatch({
@@ -33,9 +36,9 @@ export const addLead = lead => dispatch => {
     );
 };
 
-export const deleteLead = id => dispatch => {
+export const deleteLead = id => (dispatch, getState) => {
   axios
-    .delete(`/api/leads/${id}/`)
+    .delete(`/api/leads/${id}/`, checkTokenAndResponse(getState))
     .then(res => {
       dispatch(createMessage({ deleteLead: "Lead deleted successfully!" }));
       dispatch({

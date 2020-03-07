@@ -180,17 +180,18 @@ python manage.py runserver
     - [x] POST Request for register new USER
   - [x] Redirect User to Leads view
 * [ ] Reducer
-  - [ ] Add user reducer
+  - [x] LOGIN USER
+  - [ ] REGISTER USER
+  - [x] LOGOUT USER
 * [ ] Actions
   - [ ] registerUser
-  - [ ] loginUser
-  - [ ] logoutUser
+  - [x] loginUser
+  - [x] logoutUser
 * [x] Types
 
   - REGISTER_ACCOUNT
   - LOGIN_ACCOUNT
-  - GET_USER_INFO
-  - LOGOUT_ACCOUNT
+  - LOGOUT_USER
   - USER_LOADING
   - USER_LOADED
   - AUTH_ERROR
@@ -202,6 +203,9 @@ python manage.py runserver
 * [ ] Add search leads form
 * [ ] Add seprate component to add, update leader
 * [ ] Add .env file for protect server routes
+* [ ] Add profile to show user info
+* [ ] Clear our the redux state for leads when logging out.
+* [ ] If im logged in and refresh the page it takes me back to the login page even though I can see my token in redux.
 
 - [ ] Setup eslint
 

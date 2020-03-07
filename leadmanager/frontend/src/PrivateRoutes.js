@@ -1,6 +1,9 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
+// Components
+import Spinner from "./components/spinner/Spinner";
+
 // connect components with redux
 import { connect } from "react-redux";
 
@@ -13,7 +16,7 @@ const PrivateRoute = ({ component: Component, auth, ...rest }) => {
       {...rest}
       render={props => {
         if (auth.isLoading) {
-          return <p className="lead">Loading...</p>;
+          return <Spinner />;
         } else if (!auth.isAuthenticated) {
           return <Redirect to="/login" />;
         } else {

@@ -2,6 +2,9 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Redirect } from "react-router-dom";
 
+// Components
+import Spinner from "../spinner/Spinner";
+
 // prop types
 import PropTypes from "prop-types";
 
@@ -11,8 +14,8 @@ import { loginUser } from "../../redux/actions/auth";
 // connect component with redux
 import { connect } from "react-redux";
 
-const LoginForm = ({ loginUser, isAuthenticated }) => {
-  const { register, handleSubmit, reset } = useForm();
+const LoginForm = ({ loginUser, isAuthenticated, isLoading }) => {
+  const { register, handleSubmit } = useForm();
   const onSubmit = data => {
     loginUser(data);
   };
@@ -41,19 +44,21 @@ const LoginForm = ({ loginUser, isAuthenticated }) => {
       </div>
 
       <button type="submit" className="btn btn-info btn-block">
-        Login
+        {isLoading ? <Spinner /> : "Login"}
       </button>
     </form>
   );
 };
 
 LoginForm.propTypes = {
+  loginUser: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
-  loginUser: PropTypes.func.isRequired
+  isLoading: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  isLoading: state.auth.isLoading
 });
 
 export default connect(mapStateToProps, { loginUser })(LoginForm);
